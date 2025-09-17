@@ -1,9 +1,24 @@
 #include "bitops.h"
-
-int SetBit(uint32_t *value, int bitNumber)
+#include "stdbool.h"
+bool SetBit(uint32_t *value, int bitNumber)
 {
-    if (value == 0) return -1;
-    if (bitNumber < 0 || bitNumber >= 32) return -1;
+    if (value == 0) return false;
+    if (bitNumber < 0 || bitNumber >= 32) return false;
     *value |= ((uint32_t)1 << bitNumber);
-    return 0;
+    return true;
 }
+bool clearBit(uint32_t *value, int bitNumber)
+{
+    if(value == 0) return false;
+    if(bitNumber < 0 || bitNumber >=32 ) return false;
+    *value &= ~(1 << bitNumber);
+     return true;
+}
+bool toggleBit(uint32_t *value, int bitNumber)
+{
+    if(value == 0) return false;
+    if(bitNumber < 0 || bitNumber >=32 ) return false;
+    *value ^= ( 1 << bitNumber );
+     return true;
+}
+

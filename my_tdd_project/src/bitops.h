@@ -2,8 +2,11 @@
 #define BITOPS_H
 
 #include <stdint.h>
+#include "stdbool.h"
 
-int SetBit(uint32_t *value, int bitNumber);
+bool SetBit(uint32_t *value, int bitNumber);
+bool clearBit(uint32_t *value, int bitNumber);
+bool toggleBit(uint32_t *value, int bitNumber);
 
 #endif
 
